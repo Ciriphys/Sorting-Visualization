@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e1edda52-65a2-4332-9321-cfcd893dd870}</ProjectGuid>
+    <RootNamespace>SortingVisualization</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediates\$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)SortingVisualization\src;$(SolutionDir)SortingVisualization\ThirdParty\glm;$(SolutionDir)SortingVisualization\ThirdParty\stb;$(SolutionDir)SortingVisualization\ThirdParty\CiriGL;$(SolutionDir)SortingVisualization\ThirdParty\ImGui;$(SolutionDir)ThirdParty\GLFW\include;$(SolutionDir)ThirdParty\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\GLEW\lib\Release\Win32;$(SolutionDir)ThirdParty\GLFW\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="ThirdParty\ImGui\imgui.cpp" />
+    <ClCompile Include="ThirdParty\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="ThirdParty\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="ThirdParty\ImGui\imgui_impl_glfw_gl3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shader\segment.glsl" />
+    <None Include="glm\doc\api\a00001_source.html" />
+    <None Include="glm\doc\api\a00002_source.html" />
+    <None Include="glm\doc\api\a00003_source.html" />
+    <None Include="glm\doc\api\a00004_source.html" />
+    <None Include="glm\doc\api\a00005_source.html" />
+    <None Include="glm\doc\api\a00006_source.html" />
+    <None Include="glm\doc\api\a00007.html" />
+    <None Include="glm\doc\api\a00007_source.html" />
+    <None Include="glm\doc\api\a00008.html" />
+    <None Include="glm\doc\api\a00008_source.html" />
+    <None Include="glm\doc\api\a00009.html" />
+    <None Include="glm\doc\api\a00009_source.html" />
+    <None Include="glm\doc\api\a00010.html" />
+    <None Include="glm\doc\api\a00010_source.html" />
+    <None Include="glm\doc\api\a00011.html" />
+    <None Include="glm\doc\api\a00011_source.html" />
+    <None Include="glm\doc\api\a00012.html" />
+    <None Include="glm\doc\api\a00012_source.html" />
+    <None Include="glm\doc\api\a00013.html" />
+    <None Include="glm\doc\api\a00013_source.html" />
+    <None Include="glm\doc\api\a00014.html" />
+    <None Include="glm\doc\api\a00014_source.html" />
+    <None Include="glm\doc\api\a00015.html" />
+    <None Include="glm\doc\api\a00015_source.html" />
+    <None Include="glm\doc\api\a00016.html" />
+    <None Include="glm\doc\api\a00016_source.html" />
+    <None Include="glm\doc\api\a00017.html" />
+    <None Include="glm\doc\api\a00017_source.html" />
+    <None Include="glm\doc\api\a00018.html" />
+    <None Include="glm\doc\api\a00018_source.html" />
+    <None Include="glm\doc\api\a00019_source.html" />
+    <None Include="glm\doc\api\a00020_source.html" />
+    <None Include="glm\doc\api\a00021.html" />
+    <None Include="glm\doc\api\a00021_source.html" />
+    <None Include="glm\doc\api\a00022.html" />
+    <None Include="glm\doc\api\a00022_source.html" />
+    <None Include="glm\doc\api\a00023.html" />
+    <None Include="glm\doc\api\a00023_source.html" />
+    <None Include="glm\doc\api\a00024.html" />
+    <None Include="glm\doc\api\a00024_source.html" />
+    <None Include="glm\doc\api\a00025.html" />
+    <None Include="glm\doc\api\a00025_source.html" />
+    <None Include="glm\doc\api\a00026.html" />
+    <None Include="glm\doc\api\a00026_source.html" />
+    <None Include="glm\doc\api\a00027.html" />
+    <None Include="glm\doc\api\a00027_source.html" />
+    <None Include="glm\doc\api\a00028.html" />
+    <None Include="glm\doc\api\a00028_source.html" />
+    <None Include="glm\doc\api\a00029.html" />
+    <None Include="glm\doc\api\a00029_source.html" />
+    <None Include="glm\doc\api\a00030.html" />
+    <None Include="glm\doc\api\a00030_source.html" />
+    <None Include="glm\doc\api\a00031.html" />
+    <None Include="glm\doc\api\a00031_source.html" />
+    <None Include="glm\doc\api\a00032.html" />
+    <None Include="glm\doc\api\a00032_source.html" />
+    <None Include="glm\doc\api\a00033.html" />
+    <None Include="glm\doc\api\a00033_source.html" />
+    <None Include="glm\doc\api\a00034.html" />
+    <None Include="glm\doc\api\a00034_source.html" />
+    <None Include="glm\doc\api\a00035_source.html" />
+    <None Include="glm\doc\api\a00036.html" />
+    <None Include="glm\doc\api\a00036_source.html" />
+    <None Include="glm\doc\api\a00037.html" />
+    <None Include="glm\doc\api\a00037_source.html" />
+    <None Include="glm\doc\api\a00038.html" />
+    <None Include="glm\doc\api\a00038_source.html" />
+    <None Include="glm\doc\api\a00039.html" />
+    <None Include="glm\doc\api\a00039_source.html" />
+    <None Include="glm\doc\api\a00040.html" />
+    <None Include="glm\doc\api\a00040_source.html" />
+    <None Include="glm\doc\api\a00041.html" />
+    <None Include="glm\doc\api\a00041_source.html" />
+    <None Include="glm\doc\api\a00042.html" />
+    <None Include="glm\doc\api\a00042_source.html" />
+    <None Include="glm\doc\api\a00043.html" />
+    <None Include="glm\doc\api\a00043_source.html" />
+    <None Include="glm\doc\api\a00044.html" />
+    <None Include="glm\doc\api\a00044_source.html" />
+    <None Include="glm\doc\api\a00045.html" />
+    <None Include="glm\doc\api\a00045_source.html" />
+    <None Include="glm\doc\api\a00046.html" />
+    <None Include="glm\doc\api\a00046_source.html" />
+    <None Include="glm\doc\api\a00047_source.html" />
+    <None Include="glm\doc\api\a00048.html" />
+    <None Include="glm\doc\api\a00048_source.html" />
+    <None Include="glm\doc\api\a00049.html" />
+    <None Include="glm\doc\api\a00049_source.html" />
+    <None Include="glm\doc\api\a00050.html" />
+    <None Include="glm\doc\api\a00050_source.html" />
+    <None Include="glm\doc\api\a00051.html" />
+    <None Include="glm\doc\api\a00051_source.html" />
+    <None Include="glm\doc\api\a00052.html" />
+    <None Include="glm\doc\api\a00052_source.html" />
+    <None Include="glm\doc\api\a00053.html" />
+    <None Include="glm\doc\api\a00053_source.html" />
+    <None Include="glm\doc\api\a00054.html" />
+    <None Include="glm\doc\api\a00054_source.html" />
+    <None Include="glm\doc\api\a00055.html" />
+    <None Include="glm\doc\api\a00055_source.html" />
+    <None Include="glm\doc\api\a00056.html" />
+    <None Include="glm\doc\api\a00056_source.html" />
+    <None Include="glm\doc\api\a00057.html" />
+    <None Include="glm\doc\api\a00057_source.html" />
+    <None Include="glm\doc\api\a00058.html" />
+    <None Include="glm\doc\api\a00058_source.html" />
+    <None Include="glm\doc\api\a00059.html" />
+    <None Include="glm\doc\api\a00059_source.html" />
+    <None Include="glm\doc\api\a00060.html" />
+    <None Include="glm\doc\api\a00060_source.html" />
+    <None Include="glm\doc\api\a00061.html" />
+    <None Include="glm\doc\api\a00061_source.html" />
+    <None Include="glm\doc\api\a00062.html" />
+    <None Include="glm\doc\api\a00062_source.html" />
+    <None Include="glm\doc\api\a00063.html" />
+    <None Include="glm\doc\api\a00063_source.html" />
+    <None Include="glm\doc\api\a00064.html" />
+    <None Include="glm\doc\api\a00064_source.html" />
+    <None Include="glm\doc\api\a00065.html" />
+    <None Include="glm\doc\api\a00065_source.html" />
+    <None Include="glm\doc\api\a00066.html" />
+    <None Include="glm\doc\api\a00066_source.html" />
+    <None Include="glm\doc\api\a00067.html" />
+    <None Include="glm\doc\api\a00067_source.html" />
+    <None Include="glm\doc\api\a00068.html" />
+    <None Include="glm\doc\api\a00068_source.html" />
+    <None Include="glm\doc\api\a00069.html" />
+    <None Include="glm\doc\api\a00069_source.html" />
+    <None Include="glm\doc\api\a00070.html" />
+    <None Include="glm\doc\api\a00070_source.html" />
+    <None Include="glm\doc\api\a00071.html" />
+    <None Include="glm\doc\api\a00071_source.html" />
+    <None Include="glm\doc\api\a00072.html" />
+    <None Include="glm\doc\api\a00072_source.html" />
+    <None Include="glm\doc\api\a00073.html" />
+    <None Include="glm\doc\api\a00073_source.html" />
+    <None Include="glm\doc\api\a00074.html" />
+    <None Include="glm\doc\api\a00074_source.html" />
+    <None Include="glm\doc\api\a00075.html" />
+    <None Include="glm\doc\api\a00075_source.html" />
+    <None Include="glm\doc\api\a00076.html" />
+    <None Include="glm\doc\api\a00076_source.html" />
+    <None Include="glm\doc\api\a00077.html" />
+    <None Include="glm\doc\api\a00077_source.html" />
+    <None Include="glm\doc\api\a00078.html" />
+    <None Include="glm\doc\api\a00078_source.html" />
+    <None Include="glm\doc\api\a00079.html" />
+    <None Include="glm\doc\api\a00079_source.html" />
+    <None Include="glm\doc\api\a00080.html" />
+    <None Include="glm\doc\api\a00080_source.html" />
+    <None Include="glm\doc\api\a00081.html" />
+    <None Include="glm\doc\api\a00081_source.html" />
+    <None Include="glm\doc\api\a00082.html" />
+    <None Include="glm\doc\api\a00082_source.html" />
+    <None Include="glm\doc\api\a00083.html" />
+    <None Include="glm\doc\api\a00083_source.html" />
+    <None Include="glm\doc\api\a00084.html" />
+    <None Include="glm\doc\api\a00084_source.html" />
+    <None Include="glm\doc\api\a00085.html" />
+    <None Include="glm\doc\api\a00085_source.html" />
+    <None Include="glm\doc\api\a00086.html" />
+    <None Include="glm\doc\api\a00086_source.html" />
+    <None Include="glm\doc\api\a00087.html" />
+    <None Include="glm\doc\api\a00087_source.html" />
+    <None Include="glm\doc\api\a00088.html" />
+    <None Include="glm\doc\api\a00088_source.html" />
+    <None Include="glm\doc\api\a00089.html" />
+    <None Include="glm\doc\api\a00089_source.html" />
+    <None Include="glm\doc\api\a00090.html" />
+    <None Include="glm\doc\api\a00090_source.html" />
+    <None Include="glm\doc\api\a00091.html" />
+    <None Include="glm\doc\api\a00091_source.html" />
+    <None Include="glm\doc\api\a00092.html" />
+    <None Include="glm\doc\api\a00092_source.html" />
+    <None Include="glm\doc\api\a00093.html" />
+    <None Include="glm\doc\api\a00093_source.html" />
+    <None Include="glm\doc\api\a00094.html" />
+    <None Include="glm\doc\api\a00094_source.html" />
+    <None Include="glm\doc\api\a00095_source.html" />
+    <None Include="glm\doc\api\a00096.html" />
+    <None Include="glm\doc\api\a00096_source.html" />
+    <None Include="glm\doc\api\a00097.html" />
+    <None Include="glm\doc\api\a00097_source.html" />
+    <None Include="glm\doc\api\a00098.html" />
+    <None Include="glm\doc\api\a00098_source.html" />
+    <None Include="glm\doc\api\a00099.html" />
+    <None Include="glm\doc\api\a00099_source.html" />
+    <None Include="glm\doc\api\a00100.html" />
+    <None Include="glm\doc\api\a00100_source.html" />
+    <None Include="glm\doc\api\a00101.html" />
+    <None Include="glm\doc\api\a00101_source.html" />
+    <None Include="glm\doc\api\a00102.html" />
+    <None Include="glm\doc\api\a00102_source.html" />
+    <None Include="glm\doc\api\a00103.html" />
+    <None Include="glm\doc\api\a00103_source.html" />
+    <None Include="glm\doc\api\a00104.html" />
+    <None Include="glm\doc\api\a00104_source.html" />
+    <None Include="glm\doc\api\a00105.html" />
+    <None Include="glm\doc\api\a00105_source.html" />
+    <None Include="glm\doc\api\a00106.html" />
+    <None Include="glm\doc\api\a00106_source.html" />
+    <None Include="glm\doc\api\a00107.html" />
+    <None Include="glm\doc\api\a00107_source.html" />
+    <None Include="glm\doc\api\a00108.html" />
+    <None Include="glm\doc\api\a00108_source.html" />
+    <None Include="glm\doc\api\a00109.html" />
+    <None Include="glm\doc\api\a00109_source.html" />
+    <None Include="glm\doc\api\a00110.html" />
+    <None Include="glm\doc\api\a00110_source.html" />
+    <None Include="glm\doc\api\a00111.html" />
+    <None Include="glm\doc\api\a00111_source.html" />
+    <None Include="glm\doc\api\a00112.html" />
+    <None Include="glm\doc\api\a00112_source.html" />
+    <None Include="glm\doc\api\a00113.html" />
+    <None Include="glm\doc\api\a00113_source.html" />
+    <None Include="glm\doc\api\a00114.html" />
+    <None Include="glm\doc\api\a00114_source.html" />
+    <None Include="glm\doc\api\a00115.html" />
+    <None Include="glm\doc\api\a00115_source.html" />
+    <None Include="glm\doc\api\a00116.html" />
+    <None Include="glm\doc\api\a00116_source.html" />
+    <None Include="glm\doc\api\a00117.html" />
+    <None Include="glm\doc\api\a00117_source.html" />
+    <None Include="glm\doc\api\a00118.html" />
+    <None Include="glm\doc\api\a00118_source.html" />
+    <None Include="glm\doc\api\a00119.html" />
+    <None Include="glm\doc\api\a00119_source.html" />
+    <None Include="glm\doc\api\a00120.html" />
+    <None Include="glm\doc\api\a00120_source.html" />
+    <None Include="glm\doc\api\a00121.html" />
+    <None Include="glm\doc\api\a00121_source.html" />
+    <None Include="glm\doc\api\a00122.html" />
+    <None Include="glm\doc\api\a00122_source.html" />
+    <None Include="glm\doc\api\a00123.html" />
+    <None Include="glm\doc\api\a00123_source.html" />
+    <None Include="glm\doc\api\a00124_source.html" />
+    <None Include="glm\doc\api\a00125.html" />
+    <None Include="glm\doc\api\a00125_source.html" />
+    <None Include="glm\doc\api\a00126.html" />
+    <None Include="glm\doc\api\a00126_source.html" />
+    <None Include="glm\doc\api\a00127.html" />
+    <None Include="glm\doc\api\a00127_source.html" />
+    <None Include="glm\doc\api\a00128.html" />
+    <None Include="glm\doc\api\a00128_source.html" />
+    <None Include="glm\doc\api\a00129.html" />
+    <None Include="glm\doc\api\a00129_source.html" />
+    <None Include="glm\doc\api\a00130.html" />
+    <None Include="glm\doc\api\a00130_source.html" />
+    <None Include="glm\doc\api\a00131.html" />
+    <None Include="glm\doc\api\a00131_source.html" />
+    <None Include="glm\doc\api\a00132.html" />
+    <None Include="glm\doc\api\a00132_source.html" />
+    <None Include="glm\doc\api\a00133.html" />
+    <None Include="glm\doc\api\a00133_source.html" />
+    <None Include="glm\doc\api\a00134.html" />
+    <None Include="glm\doc\api\a00134_source.html" />
+    <None Include="glm\doc\api\a00135.html" />
+    <None Include="glm\doc\api\a00135_source.html" />
+    <None Include="glm\doc\api\a00136.html" />
+    <None Include="glm\doc\api\a00136_source.html" />
+    <None Include="glm\doc\api\a00137.html" />
+    <None Include="glm\doc\api\a00137_source.html" />
+    <None Include="glm\doc\api\a00138.html" />
+    <None Include="glm\doc\api\a00138_source.html" />
+    <None Include="glm\doc\api\a00139.html" />
+    <None Include="glm\doc\api\a00139_source.html" />
+    <None Include="glm\doc\api\a00140.html" />
+    <None Include="glm\doc\api\a00140_source.html" />
+    <None Include="glm\doc\api\a00141.html" />
+    <None Include="glm\doc\api\a00141_source.html" />
+    <None Include="glm\doc\api\a00142.html" />
+    <None Include="glm\doc\api\a00142_source.html" />
+    <None Include="glm\doc\api\a00143.html" />
+    <None Include="glm\doc\api\a00143_source.html" />
+    <None Include="glm\doc\api\a00144.html" />
+    <None Include="glm\doc\api\a00144_source.html" />
+    <None Include="glm\doc\api\a00145.html" />
+    <None Include="glm\doc\api\a00145_source.html" />
+    <None Include="glm\doc\api\a00146.html" />
+    <None Include="glm\doc\api\a00146_source.html" />
+    <None Include="glm\doc\api\a00147.html" />
+    <None Include="glm\doc\api\a00147_source.html" />
+    <None Include="glm\doc\api\a00148.html" />
+    <None Include="glm\doc\api\a00148_source.html" />
+    <None Include="glm\doc\api\a00149.html" />
+    <None Include="glm\doc\api\a00149_source.html" />
+    <None Include="glm\doc\api\a00150.html" />
+    <None Include="glm\doc\api\a00150_source.html" />
+    <None Include="glm\doc\api\a00151.html" />
+    <None Include="glm\doc\api\a00151_source.html" />
+    <None Include="glm\doc\api\a00152.html" />
+    <None Include="glm\doc\api\a00152_source.html" />
+    <None Include="glm\doc\api\a00153_source.html" />
+    <None Include="glm\doc\api\a00154.html" />
+    <None Include="glm\doc\api\a00154_source.html" />
+    <None Include="glm\doc\api\a00155.html" />
+    <None Include="glm\doc\api\a00155_source.html" />
+    <None Include="glm\doc\api\a00156.html" />
+    <None Include="glm\doc\api\a00156_source.html" />
+    <None Include="glm\doc\api\a00157.html" />
+    <None Include="glm\doc\api\a00157_source.html" />
+    <None Include="glm\doc\api\a00158.html" />
+    <None Include="glm\doc\api\a00158_source.html" />
+    <None Include="glm\doc\api\a00159.html" />
+    <None Include="glm\doc\api\a00159_source.html" />
+    <None Include="glm\doc\api\a00160.html" />
+    <None Include="glm\doc\api\a00160_source.html" />
+    <None Include="glm\doc\api\a00161.html" />
+    <None Include="glm\doc\api\a00161_source.html" />
+    <None Include="glm\doc\api\a00162.html" />
+    <None Include="glm\doc\api\a00162_source.html" />
+    <None Include="glm\doc\api\a00163_source.html" />
+    <None Include="glm\doc\api\a00164_source.html" />
+    <None Include="glm\doc\api\a00165.html" />
+    <None Include="glm\doc\api\a00165_source.html" />
+    <None Include="glm\doc\api\a00166.html" />
+    <None Include="glm\doc\api\a00166_source.html" />
+    <None Include="glm\doc\api\a00167.html" />
+    <None Include="glm\doc\api\a00167_source.html" />
+    <None Include="glm\doc\api\a00168.html" />
+    <None Include="glm\doc\api\a00168_source.html" />
+    <None Include="glm\doc\api\a00169.html" />
+    <None Include="glm\doc\api\a00169_source.html" />
+    <None Include="glm\doc\api\a00170.html" />
+    <None Include="glm\doc\api\a00170_source.html" />
+    <None Include="glm\doc\api\a00171.html" />
+    <None Include="glm\doc\api\a00171_source.html" />
+    <None Include="glm\doc\api\a00172.html" />
+    <None Include="glm\doc\api\a00172_source.html" />
+    <None Include="glm\doc\api\a00173.html" />
+    <None Include="glm\doc\api\a00173_source.html" />
+    <None Include="glm\doc\api\a00174.html" />
+    <None Include="glm\doc\api\a00174_source.html" />
+    <None Include="glm\doc\api\a00175.html" />
+    <None Include="glm\doc\api\a00175_source.html" />
+    <None Include="glm\doc\api\a00176.html" />
+    <None Include="glm\doc\api\a00176_source.html" />
+    <None Include="glm\doc\api\a00177.html" />
+    <None Include="glm\doc\api\a00177_source.html" />
+    <None Include="glm\doc\api\a00178.html" />
+    <None Include="glm\doc\api\a00178_source.html" />
+    <None Include="glm\doc\api\a00179.html" />
+    <None Include="glm\doc\api\a00179_source.html" />
+    <None Include="glm\doc\api\a00180.html" />
+    <None Include="glm\doc\api\a00180_source.html" />
+    <None Include="glm\doc\api\a00181.html" />
+    <None Include="glm\doc\api\a00181_source.html" />
+    <None Include="glm\doc\api\a00182.html" />
+    <None Include="glm\doc\api\a00182_source.html" />
+    <None Include="glm\doc\api\a00183.html" />
+    <None Include="glm\doc\api\a00183_source.html" />
+    <None Include="glm\doc\api\a00184.html" />
+    <None Include="glm\doc\api\a00184_source.html" />
+    <None Include="glm\doc\api\a00185.html" />
+    <None Include="glm\doc\api\a00185_source.html" />
+    <None Include="glm\doc\api\a00186.html" />
+    <None Include="glm\doc\api\a00186_source.html" />
+    <None Include="glm\doc\api\a00187.html" />
+    <None Include="glm\doc\api\a00187_source.html" />
+    <None Include="glm\doc\api\a00188.html" />
+    <None Include="glm\doc\api\a00188_source.html" />
+    <None Include="glm\doc\api\a00189.html" />
+    <None Include="glm\doc\api\a00189_source.html" />
+    <None Include="glm\doc\api\a00190.html" />
+    <None Include="glm\doc\api\a00190_source.html" />
+    <None Include="glm\doc\api\a00191.html" />
+    <None Include="glm\doc\api\a00191_source.html" />
+    <None Include="glm\doc\api\a00192.html" />
+    <None Include="glm\doc\api\a00192_source.html" />
+    <None Include="glm\doc\api\a00193.html" />
+    <None Include="glm\doc\api\a00193_source.html" />
+    <None Include="glm\doc\api\a00194.html" />
+    <None Include="glm\doc\api\a00194_source.html" />
+    <None Include="glm\doc\api\a00195.html" />
+    <None Include="glm\doc\api\a00195_source.html" />
+    <None Include="glm\doc\api\a00196.html" />
+    <None Include="glm\doc\api\a00196_source.html" />
+    <None Include="glm\doc\api\a00197.html" />
+    <None Include="glm\doc\api\a00197_source.html" />
+    <None Include="glm\doc\api\a00198.html" />
+    <None Include="glm\doc\api\a00198_source.html" />
+    <None Include="glm\doc\api\a00199.html" />
+    <None Include="glm\doc\api\a00199_source.html" />
+    <None Include="glm\doc\api\a00200.html" />
+    <None Include="glm\doc\api\a00200_source.html" />
+    <None Include="glm\doc\api\a00201.html" />
+    <None Include="glm\doc\api\a00201_source.html" />
+    <None Include="glm\doc\api\a00202.html" />
+    <None Include="glm\doc\api\a00202_source.html" />
+    <None Include="glm\doc\api\a00203.html" />
+    <None Include="glm\doc\api\a00203_source.html" />
+    <None Include="glm\doc\api\a00204.html" />
+    <None Include="glm\doc\api\a00204_source.html" />
+    <None Include="glm\doc\api\a00205.html" />
+    <None Include="glm\doc\api\a00205_source.html" />
+    <None Include="glm\doc\api\a00206.html" />
+    <None Include="glm\doc\api\a00206_source.html" />
+    <None Include="glm\doc\api\a00207.html" />
+    <None Include="glm\doc\api\a00207_source.html" />
+    <None Include="glm\doc\api\a00208.html" />
+    <None Include="glm\doc\api\a00208_source.html" />
+    <None Include="glm\doc\api\a00209.html" />
+    <None Include="glm\doc\api\a00209_source.html" />
+    <None Include="glm\doc\api\a00210.html" />
+    <None Include="glm\doc\api\a00210_source.html" />
+    <None Include="glm\doc\api\a00211.html" />
+    <None Include="glm\doc\api\a00211_source.html" />
+    <None Include="glm\doc\api\a00212.html" />
+    <None Include="glm\doc\api\a00212_source.html" />
+    <None Include="glm\doc\api\a00213.html" />
+    <None Include="glm\doc\api\a00213_source.html" />
+    <None Include="glm\doc\api\a00214.html" />
+    <None Include="glm\doc\api\a00214_source.html" />
+    <None Include="glm\doc\api\a00215.html" />
+    <None Include="glm\doc\api\a00215_source.html" />
+    <None Include="glm\doc\api\a00216.html" />
+    <None Include="glm\doc\api\a00216_source.html" />
+    <None Include="glm\doc\api\a00217.html" />
+    <None Include="glm\doc\api\a00217_source.html" />
+    <None Include="glm\doc\api\a00218.html" />
+    <None Include="glm\doc\api\a00218_source.html" />
+    <None Include="glm\doc\api\a00219.html" />
+    <None Include="glm\doc\api\a00219_source.html" />
+    <None Include="glm\doc\api\a00220.html" />
+    <None Include="glm\doc\api\a00220_source.html" />
+    <None Include="glm\doc\api\a00221.html" />
+    <None Include="glm\doc\api\a00221_source.html" />
+    <None Include="glm\doc\api\a00222.html" />
+    <None Include="glm\doc\api\a00222_source.html" />
+    <None Include="glm\doc\api\a00223.html" />
+    <None Include="glm\doc\api\a00223_source.html" />
+    <None Include="glm\doc\api\a00224.html" />
+    <None Include="glm\doc\api\a00224_source.html" />
+    <None Include="glm\doc\api\a00225.html" />
+    <None Include="glm\doc\api\a00225_source.html" />
+    <None Include="glm\doc\api\a00226.html" />
+    <None Include="glm\doc\api\a00226_source.html" />
+    <None Include="glm\doc\api\a00227.html" />
+    <None Include="glm\doc\api\a00227_source.html" />
+    <None Include="glm\doc\api\a00228.html" />
+    <None Include="glm\doc\api\a00228_source.html" />
+    <None Include="glm\doc\api\a00229.html" />
+    <None Include="glm\doc\api\a00229_source.html" />
+    <None Include="glm\doc\api\a00230.html" />
+    <None Include="glm\doc\api\a00230_source.html" />
+    <None Include="glm\doc\api\a00231.html" />
+    <None Include="glm\doc\api\a00231_source.html" />
+    <None Include="glm\doc\api\a00232.html" />
+    <None Include="glm\doc\api\a00232_source.html" />
+    <None Include="glm\doc\api\a00233.html" />
+    <None Include="glm\doc\api\a00233_source.html" />
+    <None Include="glm\doc\api\a00234.html" />
+    <None Include="glm\doc\api\a00234_source.html" />
+    <None Include="glm\doc\api\a00235.html" />
+    <None Include="glm\doc\api\a00235_source.html" />
+    <None Include="glm\doc\api\a00241.html" />
+    <None Include="glm\doc\api\a00242.html" />
+    <None Include="glm\doc\api\a00243.html" />
+    <None Include="glm\doc\api\a00244.html" />
+    <None Include="glm\doc\api\a00245.html" />
+    <None Include="glm\doc\api\a00246.html" />
+    <None Include="glm\doc\api\a00247.html" />
+    <None Include="glm\doc\api\a00248.html" />
+    <None Include="glm\doc\api\a00249.html" />
+    <None Include="glm\doc\api\a00250.html" />
+    <None Include="glm\doc\api\a00251.html" />
+    <None Include="glm\doc\api\a00252.html" />
+    <None Include="glm\doc\api\a00253.html" />
+    <None Include="glm\doc\api\a00254.html" />
+    <None Include="glm\doc\api\a00255.html" />
+    <None Include="glm\doc\api\a00256.html" />
+    <None Include="glm\doc\api\a00257.html" />
+    <None Include="glm\doc\api\a00258.html" />
+    <None Include="glm\doc\api\a00259.html" />
+    <None Include="glm\doc\api\a00260.html" />
+    <None Include="glm\doc\api\a00261.html" />
+    <None Include="glm\doc\api\a00262.html" />
+    <None Include="glm\doc\api\a00263.html" />
+    <None Include="glm\doc\api\a00264.html" />
+    <None Include="glm\doc\api\a00265.html" />
+    <None Include="glm\doc\api\a00266.html" />
+    <None Include="glm\doc\api\a00267.html" />
+    <None Include="glm\doc\api\a00268.html" />
+    <None Include="glm\doc\api\a00269.html" />
+    <None Include="glm\doc\api\a00270.html" />
+    <None Include="glm\doc\api\a00271.html" />
+    <None Include="glm\doc\api\a00272.html" />
+    <None Include="glm\doc\api\a00273.html" />
+    <None Include="glm\doc\api\a00274.html" />
+    <None Include="glm\doc\api\a00275.html" />
+    <None Include="glm\doc\api\a00276.html" />
+    <None Include="glm\doc\api\a00277.html" />
+    <None Include="glm\doc\api\a00278.html" />
+    <None Include="glm\doc\api\a00279.html" />
+    <None Include="glm\doc\api\a00280.html" />
+    <None Include="glm\doc\api\a00281.html" />
+    <None Include="glm\doc\api\a00282.html" />
+    <None Include="glm\doc\api\a00283.html" />
+    <None Include="glm\doc\api\a00284.html" />
+    <None Include="glm\doc\api\a00285.html" />
+    <None Include="glm\doc\api\a00286.html" />
+    <None Include="glm\doc\api\a00287.html" />
+    <None Include="glm\doc\api\a00288.html" />
+    <None Include="glm\doc\api\a00289.html" />
+    <None Include="glm\doc\api\a00290.html" />
+    <None Include="glm\doc\api\a00291.html" />
+    <None Include="glm\doc\api\a00292.html" />
+    <None Include="glm\doc\api\a00293.html" />
+    <None Include="glm\doc\api\a00294.html" />
+    <None Include="glm\doc\api\a00295.html" />
+    <None Include="glm\doc\api\a00296.html" />
+    <None Include="glm\doc\api\a00297.html" />
+    <None Include="glm\doc\api\a00298.html" />
+    <None Include="glm\doc\api\a00299.html" />
+    <None Include="glm\doc\api\a00300.html" />
+    <None Include="glm\doc\api\a00301.html" />
+    <None Include="glm\doc\api\a00302.html" />
+    <None Include="glm\doc\api\a00303.html" />
+    <None Include="glm\doc\api\a00304.html" />
+    <None Include="glm\doc\api\a00305.html" />
+    <None Include="glm\doc\api\a00306.html" />
+    <None Include="glm\doc\api\a00307.html" />
+    <None Include="glm\doc\api\a00308.html" />
+    <None Include="glm\doc\api\a00309.html" />
+    <None Include="glm\doc\api\a00310.html" />
+    <None Include="glm\doc\api\a00311.html" />
+    <None Include="glm\doc\api\a00312.html" />
+    <None Include="glm\doc\api\a00313.html" />
+    <None Include="glm\doc\api\a00314.html" />
+    <None Include="glm\doc\api\a00315.html" />
+    <None Include="glm\doc\api\a00316.html" />
+    <None Include="glm\doc\api\a00317.html" />
+    <None Include="glm\doc\api\a00318.html" />
+    <None Include="glm\doc\api\a00319.html" />
+    <None Include="glm\doc\api\a00320.html" />
+    <None Include="glm\doc\api\a00321.html" />
+    <None Include="glm\doc\api\a00322.html" />
+    <None Include="glm\doc\api\a00323.html" />
+    <None Include="glm\doc\api\a00324.html" />
+    <None Include="glm\doc\api\a00325.html" />
+    <None Include="glm\doc\api\a00326.html" />
+    <None Include="glm\doc\api\a00327.html" />
+    <None Include="glm\doc\api\a00328.html" />
+    <None Include="glm\doc\api\a00329.html" />
+    <None Include="glm\doc\api\a00330.html" />
+    <None Include="glm\doc\api\a00331.html" />
+    <None Include="glm\doc\api\a00332.html" />
+    <None Include="glm\doc\api\a00333.html" />
+    <None Include="glm\doc\api\a00334.html" />
+    <None Include="glm\doc\api\a00335.html" />
+    <None Include="glm\doc\api\a00336.html" />
+    <None Include="glm\doc\api\a00337.html" />
+    <None Include="glm\doc\api\a00338.html" />
+    <None Include="glm\doc\api\a00339.html" />
+    <None Include="glm\doc\api\a00340.html" />
+    <None Include="glm\doc\api\a00341.html" />
+    <None Include="glm\doc\api\a00342.html" />
+    <None Include="glm\doc\api\a00343.html" />
+    <None Include="glm\doc\api\a00344.html" />
+    <None Include="glm\doc\api\a00345.html" />
+    <None Include="glm\doc\api\a00346.html" />
+    <None Include="glm\doc\api\a00347.html" />
+    <None Include="glm\doc\api\a00348.html" />
+    <None Include="glm\doc\api\a00349.html" />
+    <None Include="glm\doc\api\a00350.html" />
+    <None Include="glm\doc\api\a00351.html" />
+    <None Include="glm\doc\api\a00352.html" />
+    <None Include="glm\doc\api\a00353.html" />
+    <None Include="glm\doc\api\a00354.html" />
+    <None Include="glm\doc\api\a00355.html" />
+    <None Include="glm\doc\api\a00356.html" />
+    <None Include="glm\doc\api\a00357.html" />
+    <None Include="glm\doc\api\a00358.html" />
+    <None Include="glm\doc\api\a00359.html" />
+    <None Include="glm\doc\api\a00360.html" />
+    <None Include="glm\doc\api\a00361.html" />
+    <None Include="glm\doc\api\a00362.html" />
+    <None Include="glm\doc\api\a00363.html" />
+    <None Include="glm\doc\api\a00364.html" />
+    <None Include="glm\doc\api\a00365.html" />
+    <None Include="glm\doc\api\a00366.html" />
+    <None Include="glm\doc\api\a00367.html" />
+    <None Include="glm\doc\api\a00368.html" />
+    <None Include="glm\doc\api\a00369.html" />
+    <None Include="glm\doc\api\a00370.html" />
+    <None Include="glm\doc\api\a00371.html" />
+    <None Include="glm\doc\api\a00372.html" />
+    <None Include="glm\doc\api\a00373.html" />
+    <None Include="glm\doc\api\a00374.html" />
+    <None Include="glm\doc\api\dir_033f5edb0915b828d2c46ed4804e5503.html" />
+    <None Include="glm\doc\api\dir_3a581ba30d25676e4b797b1f96d53b45.html" />
+    <None Include="glm\doc\api\dir_44e5e654415abd9ca6fdeaddaff8565e.html" />
+    <None Include="glm\doc\api\dir_4c6bd29c73fa4e5a2509e1c15f846751.html" />
+    <None Include="glm\doc\api\dir_5189610d3ba09ec39b766fb99b34cd93.html" />
+    <None Include="glm\doc\api\dir_6b66465792d005310484819a0eb0b0d3.html" />
+    <None Include="glm\doc\api\dir_9e5fe034a00e89334fd5186c3e7db156.html" />
+    <None Include="glm\doc\api\dir_a8bee7be44182a33f3820393ae0b105d.html" />
+    <None Include="glm\doc\api\dir_cef2d71d502cb69a9252bca2297d9549.html" />
+    <None Include="glm\doc\api\search\all_0.html" />
+    <None Include="glm\doc\api\search\all_1.html" />
+    <None Include="glm\doc\api\search\all_10.html" />
+    <None Include="glm\doc\api\search\all_11.html" />
+    <None Include="glm\doc\api\search\all_12.html" />
+    <None Include="glm\doc\api\search\all_13.html" />
+    <None Include="glm\doc\api\search\all_14.html" />
+    <None Include="glm\doc\api\search\all_15.html" />
+    <None Include="glm\doc\api\search\all_16.html" />
+    <None Include="glm\doc\api\search\all_2.html" />
+    <None Include="glm\doc\api\search\all_3.html" />
+    <None Include="glm\doc\api\search\all_4.html" />
+    <None Include="glm\doc\api\search\all_5.html" />
+    <None Include="glm\doc\api\search\all_6.html" />
+    <None Include="glm\doc\api\search\all_7.html" />
+    <None Include="glm\doc\api\search\all_8.html" />
+    <None Include="glm\doc\api\search\all_9.html" />
+    <None Include="glm\doc\api\search\all_a.html" />
+    <None Include="glm\doc\api\search\all_b.html" />
+    <None Include="glm\doc\api\search\all_c.html" />
+    <None Include="glm\doc\api\search\all_d.html" />
+    <None Include="glm\doc\api\search\all_e.html" />
+    <None Include="glm\doc\api\search\all_f.html" />
+    <None Include="glm\doc\api\search\files_0.html" />
+    <None Include="glm\doc\api\search\files_1.html" />
+    <None Include="glm\doc\api\search\files_10.html" />
+    <None Include="glm\doc\api\search\files_11.html" />
+    <None Include="glm\doc\api\search\files_12.html" />
+    <None Include="glm\doc\api\search\files_13.html" />
+    <None Include="glm\doc\api\search\files_14.html" />
+    <None Include="glm\doc\api\search\files_2.html" />
+    <None Include="glm\doc\api\search\files_3.html" />
+    <None Include="glm\doc\api\search\files_4.html" />
+    <None Include="glm\doc\api\search\files_5.html" />
+    <None Include="glm\doc\api\search\files_6.html" />
+    <None Include="glm\doc\api\search\files_7.html" />
+    <None Include="glm\doc\api\search\files_8.html" />
+    <None Include="glm\doc\api\search\files_9.html" />
+    <None Include="glm\doc\api\search\files_a.html" />
+    <None Include="glm\doc\api\search\files_b.html" />
+    <None Include="glm\doc\api\search\files_c.html" />
+    <None Include="glm\doc\api\search\files_d.html" />
+    <None Include="glm\doc\api\search\files_e.html" />
+    <None Include="glm\doc\api\search\files_f.html" />
+    <None Include="glm\doc\api\search\functions_0.html" />
+    <None Include="glm\doc\api\search\functions_1.html" />
+    <None Include="glm\doc\api\search\functions_10.html" />
+    <None Include="glm\doc\api\search\functions_11.html" />
+    <None Include="glm\doc\api\search\functions_12.html" />
+    <None Include="glm\doc\api\search\functions_13.html" />
+    <None Include="glm\doc\api\search\functions_14.html" />
+    <None Include="glm\doc\api\search\functions_15.html" />
+    <None Include="glm\doc\api\search\functions_16.html" />
+    <None Include="glm\doc\api\search\functions_2.html" />
+    <None Include="glm\doc\api\search\functions_3.html" />
+    <None Include="glm\doc\api\search\functions_4.html" />
+    <None Include="glm\doc\api\search\functions_5.html" />
+    <None Include="glm\doc\api\search\functions_6.html" />
+    <None Include="glm\doc\api\search\functions_7.html" />
+    <None Include="glm\doc\api\search\functions_8.html" />
+    <None Include="glm\doc\api\search\functions_9.html" />
+    <None Include="glm\doc\api\search\functions_a.html" />
+    <None Include="glm\doc\api\search\functions_b.html" />
+    <None Include="glm\doc\api\search\functions_c.html" />
+    <None Include="glm\doc\api\search\functions_d.html" />
+    <None Include="glm\doc\api\search\functions_e.html" />
+    <None Include="glm\doc\api\search\functions_f.html" />
+    <None Include="glm\doc\api\search\groups_0.html" />
+    <None Include="glm\doc\api\search\groups_1.html" />
+    <None Include="glm\doc\api\search\groups_2.html" />
+    <None Include="glm\doc\api\search\groups_3.html" />
+    <None Include="glm\doc\api\search\groups_4.html" />
+    <None Include="glm\doc\api\search\groups_5.html" />
+    <None Include="glm\doc\api\search\groups_6.html" />
+    <None Include="glm\doc\api\search\groups_7.html" />
+    <None Include="glm\doc\api\search\groups_8.html" />
+    <None Include="glm\doc\api\search\groups_9.html" />
+    <None Include="glm\doc\api\search\nomatches.html" />
+    <None Include="glm\doc\api\search\pages_0.html" />
+    <None Include="glm\doc\api\search\typedefs_0.html" />
+    <None Include="glm\doc\api\search\typedefs_1.html" />
+    <None Include="glm\doc\api\search\typedefs_2.html" />
+    <None Include="glm\doc\api\search\typedefs_3.html" />
+    <None Include="glm\doc\api\search\typedefs_4.html" />
+    <None Include="glm\doc\api\search\typedefs_5.html" />
+    <None Include="glm\doc\api\search\typedefs_6.html" />
+    <None Include="glm\doc\api\search\typedefs_7.html" />
+    <None Include="glm\doc\api\search\typedefs_8.html" />
+    <None Include="glm\doc\api\search\typedefs_9.html" />
+    <None Include="glm\doc\api\search\typedefs_a.html" />
+    <None Include="glm\doc\api\search\typedefs_b.html" />
+    <None Include="glm\doc\api\search\typedefs_c.html" />
+    <None Include="glm\doc\api\search\typedefs_d.html" />
+    <None Include="ThirdParty\glm\glm\detail\func_common.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_common_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_exponential.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_exponential_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_geometric.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_geometric_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_integer.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_integer_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_matrix.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_matrix_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_packing.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_packing_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_trigonometric.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_trigonometric_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_vector_relational.inl" />
+    <None Include="ThirdParty\glm\glm\detail\func_vector_relational_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_half.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat2x2.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat2x3.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat2x4.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat3x2.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat3x3.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat3x4.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat4x2.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat4x3.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat4x4.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_mat4x4_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_quat.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_quat_simd.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_vec1.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_vec2.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_vec3.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_vec4.inl" />
+    <None Include="ThirdParty\glm\glm\detail\type_vec4_simd.inl" />
+    <None Include="ThirdParty\glm\glm\ext\matrix_clip_space.inl" />
+    <None Include="ThirdParty\glm\glm\ext\matrix_common.inl" />
+    <None Include="ThirdParty\glm\glm\ext\matrix_integer.inl" />
+    <None Include="ThirdParty\glm\glm\ext\matrix_projection.inl" />
+    <None Include="ThirdParty\glm\glm\ext\matrix_relational.inl" />
+    <None Include="ThirdParty\glm\glm\ext\matrix_transform.inl" />
+    <None Include="ThirdParty\glm\glm\ext\quaternion_common.inl" />
+    <None Include="ThirdParty\glm\glm\ext\quaternion_common_simd.inl" />
+    <None Include="ThirdParty\glm\glm\ext\quaternion_exponential.inl" />
+    <None Include="ThirdParty\glm\glm\ext\quaternion_geometric.inl" />
+    <None Include="ThirdParty\glm\glm\ext\quaternion_relational.inl" />
+    <None Include="ThirdParty\glm\glm\ext\quaternion_transform.inl" />
+    <None Include="ThirdParty\glm\glm\ext\quaternion_trigonometric.inl" />
+    <None Include="ThirdParty\glm\glm\ext\scalar_common.inl" />
+    <None Include="ThirdParty\glm\glm\ext\scalar_constants.inl" />
+    <None Include="ThirdParty\glm\glm\ext\scalar_integer.inl" />
+    <None Include="ThirdParty\glm\glm\ext\scalar_packing.inl" />
+    <None Include="ThirdParty\glm\glm\ext\scalar_reciprocal.inl" />
+    <None Include="ThirdParty\glm\glm\ext\scalar_relational.inl" />
+    <None Include="ThirdParty\glm\glm\ext\scalar_ulp.inl" />
+    <None Include="ThirdParty\glm\glm\ext\vector_common.inl" />
+    <None Include="ThirdParty\glm\glm\ext\vector_integer.inl" />
+    <None Include="ThirdParty\glm\glm\ext\vector_packing.inl" />
+    <None Include="ThirdParty\glm\glm\ext\vector_reciprocal.inl" />
+    <None Include="ThirdParty\glm\glm\ext\vector_relational.inl" />
+    <None Include="ThirdParty\glm\glm\ext\vector_ulp.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\bitfield.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\color_space.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\constants.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\epsilon.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\integer.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\matrix_access.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\matrix_inverse.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\matrix_transform.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\noise.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\packing.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\quaternion.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\quaternion_simd.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\random.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\round.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\type_precision.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\type_ptr.inl" />
+    <None Include="ThirdParty\glm\glm\gtc\ulp.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\associated_min_max.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\bit.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\closest_point.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\color_encoding.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\color_space.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\color_space_YCoCg.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\common.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\compatibility.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\component_wise.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\dual_quaternion.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\easing.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\euler_angles.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\extend.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\extended_min_max.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\exterior_product.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\fast_exponential.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\fast_square_root.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\fast_trigonometry.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\float_notmalize.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\functions.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\gradient_paint.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\handed_coordinate_space.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\hash.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\integer.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\intersect.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\io.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\log_base.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\matrix_cross_product.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\matrix_decompose.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\matrix_factorisation.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\matrix_interpolation.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\matrix_major_storage.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\matrix_operation.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\matrix_query.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\matrix_transform_2d.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\mixed_product.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\norm.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\normal.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\normalize_dot.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\number_precision.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\optimum_pow.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\orthonormalize.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\perpendicular.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\polar_coordinates.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\projection.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\quaternion.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\raw_data.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\rotate_normalized_axis.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\rotate_vector.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\scalar_relational.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\spline.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\std_based_type.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\string_cast.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\texture.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\transform.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\transform2.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\type_aligned.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\type_trait.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\vector_angle.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\vector_query.inl" />
+    <None Include="ThirdParty\glm\glm\gtx\wrap.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Macro.h" />
+    <ClInclude Include="src\Random.h" />
+    <ClInclude Include="src\SortingEngine.h" />
+    <ClInclude Include="ThirdParty\CiriGL\BufferLayout.h" />
+    <ClInclude Include="ThirdParty\CiriGL\cirigl.h" />
+    <ClInclude Include="ThirdParty\CiriGL\Debug.h" />
+    <ClInclude Include="ThirdParty\CiriGL\IndexBuffer.h" />
+    <ClInclude Include="ThirdParty\CiriGL\Shader.h" />
+    <ClInclude Include="ThirdParty\CiriGL\Texture.h" />
+    <ClInclude Include="ThirdParty\CiriGL\VertexArray.h" />
+    <ClInclude Include="ThirdParty\CiriGL\VertexBuffer.h" />
+    <ClInclude Include="ThirdParty\glm\glm\common.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\compute_common.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\compute_vector_relational.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\qualifier.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\setup.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_float.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_half.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat2x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat2x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat2x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat3x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat3x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat3x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat4x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat4x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_mat4x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_quat.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_vec1.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_vec2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_vec3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\type_vec4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\_features.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\_fixes.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\_noise.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\_swizzle.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\_swizzle_func.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\detail\_vectorize.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\exponential.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_clip_space.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_common.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double2x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double2x2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double2x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double2x3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double2x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double2x4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double3x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double3x2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double3x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double3x3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double3x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double3x4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double4x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double4x2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double4x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double4x3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double4x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_double4x4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float2x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float2x2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float2x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float2x3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float2x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float2x4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float3x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float3x2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float3x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float3x3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float3x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float3x4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float4x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float4x2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float4x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float4x3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float4x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_float4x4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int2x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int2x2_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int2x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int2x3_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int2x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int2x4_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int3x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int3x2_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int3x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int3x3_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int3x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int3x4_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int4x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int4x2_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int4x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int4x3_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int4x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_int4x4_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_integer.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_projection.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_relational.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_transform.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint2x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint2x2_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint2x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint2x3_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint2x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint2x4_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint3x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint3x2_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint3x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint3x3_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint3x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint3x4_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint4x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint4x2_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint4x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint4x3_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint4x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\matrix_uint4x4_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_common.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_double.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_double_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_exponential.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_float.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_float_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_geometric.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_relational.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_transform.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\quaternion_trigonometric.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_common.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_constants.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_integer.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_int_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_packing.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_reciprocal.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_relational.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_uint_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\scalar_ulp.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_bool1.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_bool1_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_bool2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_bool2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_bool3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_bool3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_bool4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_bool4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_common.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_double1.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_double1_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_double2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_double2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_double3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_double3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_double4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_double4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_float1.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_float1_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_float2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_float2_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_float3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_float3_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_float4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_float4_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_int1.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_int1_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_int2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_int2_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_int3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_int3_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_int4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_int4_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_integer.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_packing.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_reciprocal.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_relational.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_uint1.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_uint1_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_uint2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_uint2_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_uint3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_uint3_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_uint4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_uint4_sized.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\ext\vector_ulp.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\fwd.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\geometric.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\glm.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\bitfield.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\color_space.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\constants.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\epsilon.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\integer.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\matrix_access.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\matrix_integer.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\matrix_inverse.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\matrix_transform.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\noise.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\packing.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\quaternion.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\random.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\reciprocal.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\round.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\type_aligned.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\type_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\type_ptr.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\ulp.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtc\vec1.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\associated_min_max.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\bit.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\closest_point.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\color_encoding.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\color_space.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\color_space_YCoCg.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\common.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\compatibility.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\component_wise.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\dual_quaternion.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\easing.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\euler_angles.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\extend.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\extended_min_max.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\exterior_product.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\fast_exponential.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\fast_square_root.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\fast_trigonometry.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\functions.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\gradient_paint.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\handed_coordinate_space.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\hash.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\integer.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\intersect.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\io.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\log_base.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\matrix_cross_product.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\matrix_decompose.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\matrix_factorisation.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\matrix_interpolation.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\matrix_major_storage.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\matrix_operation.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\matrix_query.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\matrix_transform_2d.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\mixed_product.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\norm.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\normal.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\normalize_dot.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\number_precision.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\optimum_pow.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\orthonormalize.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\perpendicular.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\polar_coordinates.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\projection.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\quaternion.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\range.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\raw_data.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\rotate_normalized_axis.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\rotate_vector.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\scalar_multiplication.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\scalar_relational.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\spline.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\std_based_type.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\string_cast.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\texture.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\transform.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\transform2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\type_aligned.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\type_trait.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\vector_angle.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\vector_query.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\vec_swizzle.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\gtx\wrap.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\integer.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat2x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat2x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat2x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat3x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat3x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat3x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat4x2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat4x3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\mat4x4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\matrix.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\packing.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\common.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\exponential.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\geometric.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\integer.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\matrix.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\neon.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\packing.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\platform.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\trigonometric.h" />
+    <ClInclude Include="ThirdParty\glm\glm\simd\vector_relational.h" />
+    <ClInclude Include="ThirdParty\glm\glm\trigonometric.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\vec2.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\vec3.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\vec4.hpp" />
+    <ClInclude Include="ThirdParty\glm\glm\vector_relational.hpp" />
+    <ClInclude Include="ThirdParty\ImGui\imconfig.h" />
+    <ClInclude Include="ThirdParty\ImGui\imgui.h" />
+    <ClInclude Include="ThirdParty\ImGui\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="ThirdParty\ImGui\imgui_internal.h" />
+    <ClInclude Include="ThirdParty\ImGui\stb_rect_pack.h" />
+    <ClInclude Include="ThirdParty\ImGui\stb_textedit.h" />
+    <ClInclude Include="ThirdParty\ImGui\stb_truetype.h" />
+    <ClInclude Include="ThirdParty\stb\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\ruda-bold.ttf" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
